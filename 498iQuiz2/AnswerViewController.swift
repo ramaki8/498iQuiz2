@@ -22,6 +22,7 @@ class AnswerViewController: UIViewController {
     var selectedAnswer = String()
     var currentQuestion = Int()
     var questions = [Question]()
+    var quizType = String()
     
     
     override func viewDidLoad() {
@@ -73,6 +74,7 @@ class AnswerViewController: UIViewController {
 //            vc.currentQuestion = self.currentQuestion + 1
           if sender?.titleLabel!!.text == "Finish" {
             let vc = segue.destinationViewController as! FinishedViewController
+            vc.navigationItem.title = "\(self.quizType) Results"
             vc.questions = self.questions
         }
     }

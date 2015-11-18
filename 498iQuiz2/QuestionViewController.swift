@@ -16,6 +16,7 @@ class QuestionViewController: UIViewController {
     var currentQuestion = Int()
     
 
+    @IBOutlet weak var questionNumber: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answer1: UIButton!
     @IBOutlet weak var answer2: UIButton!
@@ -28,6 +29,7 @@ class QuestionViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        questionNumber.text = "Question \(currentQuestion):"
         questionLabel.text = questions[currentQuestion - 1].question
         self.navigationItem.hidesBackButton = true
         
@@ -64,6 +66,8 @@ class QuestionViewController: UIViewController {
         let answerVC = segue.destinationViewController as! AnswerViewController
         let button = sender as! UIButton
         
+        answerVC.quizType = self.navigationItem.title!
+        answerVC.navigationItem.title = "\(self.navigationItem.title!): Answer \(currentQuestion)"
         answerVC.currentQuestion = self.currentQuestion
         answerVC.selectedAnswer = (button.titleLabel?.text)!
         answerVC.correctAnswer = self.questions[currentQuestion - 1].correctAnswer

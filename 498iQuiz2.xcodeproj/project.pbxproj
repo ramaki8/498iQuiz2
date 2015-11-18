@@ -426,10 +426,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = 498iQuiz2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.uw.rmkipps.-98iQuiz2";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.rmkipps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -437,10 +440,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = 498iQuiz2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.uw.rmkipps.-98iQuiz2";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.rmkipps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -511,6 +517,7 @@
 				A8F32C0E1BF58644006A1C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8F32C0F1BF58644006A1C12 /* Build configuration list for PBXNativeTarget "498iQuiz2Tests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +526,7 @@
 				A8F32C111BF58644006A1C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8F32C121BF58644006A1C12 /* Build configuration list for PBXNativeTarget "498iQuiz2UITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +535,7 @@
 				A8F32C141BF58644006A1C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

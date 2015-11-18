@@ -1,0 +1,60 @@
+//
+//  AnswerViewController.swift
+//  498iQuiz2
+//
+//  Created by Rachel Kipps on 11/14/15.
+//  Copyright © 2015 Rachel Kipps. All rights reserved.
+//
+
+import UIKit
+
+
+class AnswerViewController: UIViewController {
+    
+
+    @IBOutlet weak var correctLabel: UILabel!
+    @IBOutlet weak var yourAnswer: UILabel!
+    
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var finishButton: UIButton!
+    
+    var correctAnswer = String()
+    var selectedAnswer = String()
+    var currentQuestion = Int()
+    var questions = [Question]()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationItem.hidesBackButton = true
+        finishButton.enabled = false
+
+        if selectedAnswer == correctAnswer {
+            self.correctLabel.text = "Correct!"
+            self.yourAnswer.text = "You chose \(self.selectedAnswer). Good job!"
+            let nav = self.navigationController as! QuizNavViewController
+            nav.totalCorrect++
+        } else {
+            self.correctLabel.text = "Incorrect."
+            self.yourAnswer.text = "You chose \(self.selectedAnswer), but the correct answer was \(correctAnswer)"
+        }
+        if currentQuestion == questions.count {
+            finishButton.enabled = true
+            continueButton.enabled = false
+        }
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if sender?.titleLabel!!.text == "Continue" {
+            let vc = segue.destinationViewController as! QuestionViewController
+            vc.questions = self.questions
+            vc.currentQuestion = self.currentQuestion + 1
+        } else if sender?.titleLabel!!.text == "Finish" {
+            let vc = segue.destinationViewController as! FinishedViewController
+            vc.questions = self.questions
+        }
+    }
+
+}

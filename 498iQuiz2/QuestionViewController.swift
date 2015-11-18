@@ -24,6 +24,10 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         questionLabel.text = questions[currentQuestion - 1].question
         self.navigationItem.hidesBackButton = true
         
@@ -37,7 +41,6 @@ class QuestionViewController: UIViewController {
             if button.isKindOfClass(UIButton) {
                 let b = button as! UIButton
                 b.addTarget(self, action: "moveToAnswer:", forControlEvents: UIControlEvents.TouchUpInside)
-                //b.hidden = true
             }
         }
     }

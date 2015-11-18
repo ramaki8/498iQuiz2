@@ -37,7 +37,7 @@ class AnswerViewController: UIViewController {
             nav.totalCorrect++
         } else {
             self.correctLabel.text = "Incorrect."
-            self.yourAnswer.text = "You chose \(self.selectedAnswer), but the correct answer was \(correctAnswer)"
+            self.yourAnswer.text = "You chose \(self.selectedAnswer), but the correct answer was \(correctAnswer)."
         }
         if currentQuestion == questions.count {
             finishButton.enabled = true
@@ -45,13 +45,33 @@ class AnswerViewController: UIViewController {
         }
     }
 
+    @IBAction func pressContinue(sender: UIButton) {
+        let nav = self.navigationController as! QuizNavViewController
+        for (var i = 0; i < self.navigationController?.viewControllers.count; i++) {
+            let vc = nav.viewControllers[i]
+            if(vc.isKindOfClass(QuestionViewController)) {
+                let questionVC = vc as! QuestionViewController
+                questionVC.questions = self.questions
+                questionVC.currentQuestion = self.currentQuestion + 1
+                
+                nav.popToViewController(vc as! QuestionViewController, animated: true)
+                
+                break;
+            }
+        }
+    }
+    @IBAction func pressQuit(sender: UIBarButtonItem) {
+        let nav = self.navigationController as! QuizNavViewController
+        nav.popToRootViewControllerAnimated(true)
+        nav.totalCorrect = 0
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if sender?.titleLabel!!.text == "Continue" {
-            let vc = segue.destinationViewController as! QuestionViewController
-            vc.questions = self.questions
-            vc.currentQuestion = self.currentQuestion + 1
-        } else if sender?.titleLabel!!.text == "Finish" {
+//        if sender?.titleLabel!!.text == "Continue" {
+//            let vc = segue.destinationViewController as! QuestionViewController
+//            vc.questions = self.questions
+//            vc.currentQuestion = self.currentQuestion + 1
+          if sender?.titleLabel!!.text == "Finish" {
             let vc = segue.destinationViewController as! FinishedViewController
             vc.questions = self.questions
         }

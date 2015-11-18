@@ -32,7 +32,7 @@
                                             <rect key="frame" x="96" y="39" width="42" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef1-YK-Au3">
@@ -70,16 +70,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="pbt-T7-5x5">
-                        <barButtonItem key="rightBarButtonItem" id="waC-xS-XU4">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z4c-nV-WYg" userLabel="Settings">
-                                <rect key="frame" x="447" y="7" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <action selector="pressSettings:" destination="Uhd-o6-v3j" eventType="touchUpInside" id="w2h-AD-gYQ"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="kPV-51-3Ui">
+                            <connections>
+                                <action selector="pressSettings:" destination="Uhd-o6-v3j" id="JcW-qT-1Pl"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -103,7 +97,7 @@
                                 <rect key="frame" x="20" y="91" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxa-aU-nOw" userLabel="answer1">
@@ -176,29 +170,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqO-U9-tEj">
-                                <rect key="frame" x="0.0" y="72" width="600" height="21"/>
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWA-VC-iYE">
-                                <rect key="frame" x="0.0" y="289" width="600" height="21"/>
+                                <rect key="frame" x="20" y="101" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd9-Cj-ZvI">
-                                <rect key="frame" x="269" y="468" width="62" height="30"/>
+                                <rect key="frame" x="269" y="285" width="62" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="2xg-F8-Ta3" kind="show" id="V2z-tF-NO6"/>
+                                    <action selector="pressContinue:" destination="aof-wo-NVK" eventType="touchUpInside" id="iBx-d0-UNY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dah-nx-Abz">
-                                <rect key="frame" x="280" y="516" width="41" height="30"/>
+                                <rect key="frame" x="280" y="323" width="41" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
@@ -210,17 +204,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XWA-VC-iYE" firstAttribute="centerX" secondItem="YqO-U9-tEj" secondAttribute="centerX" id="10W-d6-Ogw"/>
-                            <constraint firstItem="dah-nx-Abz" firstAttribute="top" secondItem="Vd9-Cj-ZvI" secondAttribute="bottom" constant="18" id="9Y8-Ey-vnZ"/>
-                            <constraint firstItem="YqO-U9-tEj" firstAttribute="width" secondItem="wIT-jb-lw5" secondAttribute="width" id="Bwu-Gd-efY"/>
-                            <constraint firstItem="XWA-VC-iYE" firstAttribute="top" secondItem="YqO-U9-tEj" secondAttribute="bottom" constant="196" id="Cdc-C0-jf1"/>
+                            <constraint firstItem="dah-nx-Abz" firstAttribute="top" secondItem="Vd9-Cj-ZvI" secondAttribute="bottom" constant="8" id="9Y8-Ey-vnZ"/>
+                            <constraint firstItem="YqO-U9-tEj" firstAttribute="width" secondItem="wIT-jb-lw5" secondAttribute="width" constant="-40" id="Bwu-Gd-efY"/>
+                            <constraint firstItem="XWA-VC-iYE" firstAttribute="top" secondItem="YqO-U9-tEj" secondAttribute="bottom" constant="8" id="Cdc-C0-jf1"/>
                             <constraint firstItem="Vd9-Cj-ZvI" firstAttribute="centerX" secondItem="wIT-jb-lw5" secondAttribute="centerX" id="I5E-6u-cYC"/>
-                            <constraint firstItem="XWA-VC-iYE" firstAttribute="width" secondItem="wIT-jb-lw5" secondAttribute="width" id="cGc-eg-avD"/>
+                            <constraint firstItem="XWA-VC-iYE" firstAttribute="width" secondItem="wIT-jb-lw5" secondAttribute="width" constant="-40" id="cGc-eg-avD"/>
                             <constraint firstItem="dah-nx-Abz" firstAttribute="centerX" secondItem="Vd9-Cj-ZvI" secondAttribute="centerX" id="exr-0n-Dz6"/>
                             <constraint firstItem="YqO-U9-tEj" firstAttribute="top" secondItem="u2E-2s-yjR" secondAttribute="bottom" constant="8" id="ghN-hA-CjK"/>
-                            <constraint firstItem="Vd9-Cj-ZvI" firstAttribute="top" secondItem="XWA-VC-iYE" secondAttribute="bottom" constant="158" id="otw-Qi-H8K"/>
+                            <constraint firstItem="Vd9-Cj-ZvI" firstAttribute="top" secondItem="XWA-VC-iYE" secondAttribute="bottom" constant="163" id="otw-Qi-H8K"/>
                             <constraint firstItem="YqO-U9-tEj" firstAttribute="centerX" secondItem="wIT-jb-lw5" secondAttribute="centerX" id="zvh-Wa-puP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BYg-Vf-Ccs">
+                        <barButtonItem key="leftBarButtonItem" title="Quit" id="oQw-IA-ooH">
+                            <connections>
+                                <action selector="pressQuit:" destination="aof-wo-NVK" id="Rvf-zr-5M4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="continueButton" destination="Vd9-Cj-ZvI" id="Zln-Yq-Eow"/>
                         <outlet property="correctLabel" destination="YqO-U9-tEj" id="ZZu-9a-XLt"/>
@@ -248,7 +249,7 @@
                                 <rect key="frame" x="20" y="103" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXC-Dj-nTT" userLabel="Next">
@@ -298,7 +299,4 @@
             <point key="canvasLocation" x="1097" y="400"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="DTO-ED-A3r"/>
-    </inferredMetricsTieBreakers>
 </document>

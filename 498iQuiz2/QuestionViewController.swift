@@ -67,7 +67,7 @@ class QuestionViewController: UIViewController {
         let button = sender as! UIButton
         
         answerVC.quizType = self.navigationItem.title!
-        answerVC.navigationItem.title = "\(self.navigationItem.title!): Answer \(currentQuestion)"
+        answerVC.navigationItem.title = "\(self.navigationItem.title!)"
         answerVC.currentQuestion = self.currentQuestion
         answerVC.selectedAnswer = (button.titleLabel?.text)!
         answerVC.correctAnswer = self.questions[currentQuestion - 1].correctAnswer

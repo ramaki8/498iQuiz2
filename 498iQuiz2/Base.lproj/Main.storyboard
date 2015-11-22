@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xP4-Ui-yaa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xP4-Ui-yaa">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -60,7 +60,7 @@
                                     <outlet property="quizDescription" destination="ef1-YK-Au3" id="ejT-O3-WJw"/>
                                     <outlet property="quizImage" destination="HrN-RI-k2C" id="6GH-4Q-eRa"/>
                                     <outlet property="quizTitle" destination="HpR-HW-C2n" id="AXk-uo-rfP"/>
-                                    <segue destination="2xg-F8-Ta3" kind="show" id="DTO-ED-A3r"/>
+                                    <segue destination="2xg-F8-Ta3" kind="show" identifier="toQuestion" id="DTO-ED-A3r"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,6 +73,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="kPV-51-3Ui">
                             <connections>
                                 <action selector="pressSettings:" destination="Uhd-o6-v3j" id="JcW-qT-1Pl"/>
+                                <segue destination="Jtg-6F-pdv" kind="show" id="zgN-Z6-bxv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,6 +81,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDq-7F-VBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1909" y="400"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="toF-eW-P47">
+            <objects>
+                <viewController id="Jtg-6F-pdv" customClass="SettingsViewController" customModule="_98iQuiz2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4zU-ss-DQL"/>
+                        <viewControllerLayoutGuide type="bottom" id="0zk-KF-uOq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hdJ-Il-ZFc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Mh-Bn-8dN" userLabel="urlField">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tss-fu-dbq" userLabel="download">
+                                <rect key="frame" x="266" y="323" width="69" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Download"/>
+                                <connections>
+                                    <action selector="downloadQuizzes:" destination="Jtg-6F-pdv" eventType="touchUpInside" id="NtC-Zr-qcq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tss-fu-dbq" firstAttribute="top" secondItem="7Mh-Bn-8dN" secondAttribute="bottom" constant="8" id="4ne-mP-7S6"/>
+                            <constraint firstItem="tss-fu-dbq" firstAttribute="centerX" secondItem="7Mh-Bn-8dN" secondAttribute="centerX" id="PKK-EO-Md6"/>
+                            <constraint firstItem="7Mh-Bn-8dN" firstAttribute="centerX" secondItem="hdJ-Il-ZFc" secondAttribute="centerX" id="qjA-44-JaA"/>
+                            <constraint firstItem="7Mh-Bn-8dN" firstAttribute="centerY" secondItem="hdJ-Il-ZFc" secondAttribute="centerY" id="qnb-3x-bzs"/>
+                            <constraint firstItem="7Mh-Bn-8dN" firstAttribute="width" secondItem="hdJ-Il-ZFc" secondAttribute="width" constant="-40" id="xcP-xv-eDX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vvu-QO-xh4">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="MZH-39-SMm">
+                            <connections>
+                                <action selector="pressDone:" destination="Jtg-6F-pdv" id="WmP-Tg-ZnM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="urlField" destination="7Mh-Bn-8dN" id="Znz-iH-70Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMG-6u-E96" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2605" y="-270"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="HmN-Oa-fIY">
@@ -93,41 +146,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxa-aU-nOw" userLabel="answer1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Qxa-aU-nOw" userLabel="answer1">
                                 <rect key="frame" x="250" y="175" width="100" height="80"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Qxa-aU-nOw" secondAttribute="height" multiplier="3:2" constant="-20" id="GAG-41-xIl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwK-ih-ahp" userLabel="answer2">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MwK-ih-ahp" userLabel="answer2">
                                 <rect key="frame" x="250" y="270" width="100" height="80"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnI-EY-8oe" userLabel="answer3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="UnI-EY-8oe" userLabel="answer3">
                                 <rect key="frame" x="250" y="365" width="100" height="80"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRj-Df-Fdr" userLabel="answer4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qRj-Df-Fdr" userLabel="answer4">
                                 <rect key="frame" x="250" y="460" width="100" height="80"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGq-QE-u4X" userLabel="questionNumber">
                                 <rect key="frame" x="20" y="84" width="560" height="24"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlu-Go-cGf" userLabel="questionLabel">
@@ -204,13 +258,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqO-U9-tEj">
-                                <rect key="frame" x="20" y="84" width="560" height="24"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWA-VC-iYE">
                                 <rect key="frame" x="20" y="116" width="560" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -220,7 +267,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd9-Cj-ZvI">
                                 <rect key="frame" x="250" y="278" width="100" height="80"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vd9-Cj-ZvI" secondAttribute="height" multiplier="5:4" id="sAq-Yn-5Vu"/>
                                 </constraints>
@@ -233,13 +280,27 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dah-nx-Abz">
                                 <rect key="frame" x="250" y="373" width="100" height="80"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
                                     <segue destination="87O-99-H6s" kind="show" id="CkL-U6-Gxb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpL-ao-pdQ" userLabel="questionNumber">
+                                <rect key="frame" x="20" y="84" width="560" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWA-VC-iYE">
+                                <rect key="frame" x="20" y="148" width="560" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -252,10 +313,10 @@
                             <constraint firstItem="dah-nx-Abz" firstAttribute="height" secondItem="Vd9-Cj-ZvI" secondAttribute="height" id="Q8b-q8-z5x"/>
                             <constraint firstItem="Vd9-Cj-ZvI" firstAttribute="centerX" secondItem="XWA-VC-iYE" secondAttribute="centerX" id="RrE-e7-wUL"/>
                             <constraint firstItem="XWA-VC-iYE" firstAttribute="width" secondItem="wIT-jb-lw5" secondAttribute="width" constant="-40" id="cGc-eg-avD"/>
-                            <constraint firstItem="YqO-U9-tEj" firstAttribute="top" secondItem="u2E-2s-yjR" secondAttribute="bottom" constant="20" id="ghN-hA-CjK"/>
+                            <constraint firstItem="YqO-U9-tEj" firstAttribute="top" secondItem="u2E-2s-yjR" secondAttribute="bottom" constant="52" id="ghN-hA-CjK"/>
                             <constraint firstItem="dah-nx-Abz" firstAttribute="centerX" secondItem="Vd9-Cj-ZvI" secondAttribute="centerX" id="hoT-es-ZPR"/>
                             <constraint firstItem="dah-nx-Abz" firstAttribute="width" secondItem="Vd9-Cj-ZvI" secondAttribute="width" id="nty-lv-14T"/>
-                            <constraint firstItem="Vd9-Cj-ZvI" firstAttribute="top" secondItem="XWA-VC-iYE" secondAttribute="bottom" constant="138" id="y61-v0-eSk"/>
+                            <constraint firstItem="Vd9-Cj-ZvI" firstAttribute="top" secondItem="XWA-VC-iYE" secondAttribute="bottom" constant="106" id="y61-v0-eSk"/>
                             <constraint firstItem="YqO-U9-tEj" firstAttribute="centerX" secondItem="wIT-jb-lw5" secondAttribute="centerX" id="zvh-Wa-puP"/>
                         </constraints>
                     </view>
@@ -270,6 +331,7 @@
                         <outlet property="continueButton" destination="Vd9-Cj-ZvI" id="Zln-Yq-Eow"/>
                         <outlet property="correctLabel" destination="YqO-U9-tEj" id="ZZu-9a-XLt"/>
                         <outlet property="finishButton" destination="dah-nx-Abz" id="VuR-CU-4Xv"/>
+                        <outlet property="questionNumber" destination="CpL-ao-pdQ" id="uqU-mF-HX1"/>
                         <outlet property="yourAnswer" destination="XWA-VC-iYE" id="Pey-4J-p4c"/>
                     </connections>
                 </viewController>
@@ -299,7 +361,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXC-Dj-nTT" userLabel="Next">
                                 <rect key="frame" x="250" y="260" width="100" height="80"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EXC-Dj-nTT" secondAttribute="height" multiplier="5:4" id="kOU-CX-GLU"/>
                                 </constraints>

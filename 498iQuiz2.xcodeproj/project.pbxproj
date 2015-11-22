@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8AEAE531BFEDDE7006F8D3B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AEAE521BFEDDE7006F8D3B /* SettingsViewController.swift */; };
 		A8F32BE81BF58643006A1C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F32BE71BF58643006A1C12 /* AppDelegate.swift */; };
 		A8F32BEA1BF58643006A1C12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F32BE91BF58643006A1C12 /* ViewController.swift */; };
 		A8F32BED1BF58643006A1C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F32BEB1BF58643006A1C12 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8AEAE521BFEDDE7006F8D3B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A8F32BE41BF58643006A1C12 /* 498iQuiz2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 498iQuiz2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F32BE71BF58643006A1C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F32BE91BF58643006A1C12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				A8F32BE71BF58643006A1C12 /* AppDelegate.swift */,
+				A8AEAE521BFEDDE7006F8D3B /* SettingsViewController.swift */,
 				A8F32BE91BF58643006A1C12 /* ViewController.swift */,
 				A8F32BEB1BF58643006A1C12 /* Main.storyboard */,
 				A8F32C251BF85363006A1C12 /* QuizNavViewController.swift */,
@@ -285,6 +288,7 @@
 				A8F32C221BF8231C006A1C12 /* QuestionViewController.swift in Sources */,
 				A8F32C181BF586DD006A1C12 /* QuizCell.swift in Sources */,
 				A8F32C161BF58695006A1C12 /* QuizTableViewController.swift in Sources */,
+				A8AEAE531BFEDDE7006F8D3B /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ import UIKit
 class QuizNavViewController: UINavigationController {
     
     var totalCorrect = 0
+    var newQuiz = [AnyObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

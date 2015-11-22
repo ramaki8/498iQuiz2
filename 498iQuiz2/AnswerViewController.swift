@@ -14,6 +14,7 @@ class AnswerViewController: UIViewController {
 
     @IBOutlet weak var correctLabel: UILabel!
     @IBOutlet weak var yourAnswer: UILabel!
+    @IBOutlet weak var questionNumber: UILabel!
     
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
@@ -30,6 +31,7 @@ class AnswerViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
         finishButton.enabled = false
+        self.questionNumber.text = "Question \(currentQuestion) Results:"
 
         if selectedAnswer == correctAnswer {
             self.correctLabel.text = "Correct!"

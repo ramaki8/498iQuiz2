@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xP4-Ui-yaa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xP4-Ui-yaa">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -170,21 +170,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqO-U9-tEj">
-                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <rect key="frame" x="20" y="91" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWA-VC-iYE">
-                                <rect key="frame" x="20" y="101" width="560" height="21"/>
+                                <rect key="frame" x="20" y="120" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd9-Cj-ZvI">
-                                <rect key="frame" x="269" y="285" width="62" height="30"/>
+                                <rect key="frame" x="269" y="304" width="62" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
@@ -192,7 +192,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dah-nx-Abz">
-                                <rect key="frame" x="280" y="323" width="41" height="30"/>
+                                <rect key="frame" x="280" y="342" width="41" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
@@ -210,7 +210,7 @@
                             <constraint firstItem="Vd9-Cj-ZvI" firstAttribute="centerX" secondItem="wIT-jb-lw5" secondAttribute="centerX" id="I5E-6u-cYC"/>
                             <constraint firstItem="XWA-VC-iYE" firstAttribute="width" secondItem="wIT-jb-lw5" secondAttribute="width" constant="-40" id="cGc-eg-avD"/>
                             <constraint firstItem="dah-nx-Abz" firstAttribute="centerX" secondItem="Vd9-Cj-ZvI" secondAttribute="centerX" id="exr-0n-Dz6"/>
-                            <constraint firstItem="YqO-U9-tEj" firstAttribute="top" secondItem="u2E-2s-yjR" secondAttribute="bottom" constant="8" id="ghN-hA-CjK"/>
+                            <constraint firstItem="YqO-U9-tEj" firstAttribute="top" secondItem="u2E-2s-yjR" secondAttribute="bottom" constant="27" id="ghN-hA-CjK"/>
                             <constraint firstItem="Vd9-Cj-ZvI" firstAttribute="top" secondItem="XWA-VC-iYE" secondAttribute="bottom" constant="163" id="otw-Qi-H8K"/>
                             <constraint firstItem="YqO-U9-tEj" firstAttribute="centerX" secondItem="wIT-jb-lw5" secondAttribute="centerX" id="zvh-Wa-puP"/>
                         </constraints>
